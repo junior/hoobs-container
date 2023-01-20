@@ -15,7 +15,7 @@ Can be used standalone or with docker-compose or kubernetes.
 ### Simple Docker (Test use only)
 
 ```bash
-docker run --rm -p 8080:80 -p 51826:51826 ghcr.io/junior/hoobs:4.2-beta
+docker run --rm --network host -p 8080:8080 -p 51826:51826 ghcr.io/junior/hoobs:4.2-beta2
 ```
 
 Just for testing, will not persist any data.
@@ -23,5 +23,5 @@ Just for testing, will not persist any data.
 ### Docker Standalone
 
 ```bash
-docker run -d --name hoobs -p 8080:80 -p 51826:51826 -v /path/to/your/storage:/hoobs ghcr.io/junior/hoobs:4.2-beta
+docker run --rm -d --name hoobs --network host -p 8080:8080 -p 51826:51826 -v /path/to/your/storage:/hoobs ghcr.io/junior/hoobs:4.2-beta2
 ```
