@@ -21,7 +21,6 @@ RUN passwd -l root
 RUN echo "hoobs" > /etc/hostname
 RUN sudo rm -rf /var/lib/apt/lists/*
 
-USER hoobs
 VOLUME /hoobs
 WORKDIR /hoobs
 
